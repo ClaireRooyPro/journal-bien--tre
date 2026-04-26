@@ -368,9 +368,12 @@ export default function WellnessJournal() {
         return { ...prev, seconds: prev.seconds + 1 };
       });
     }, 1000);
-  }
-  function stopTimer() { if (timerRef.current) clearInterval(timerRef.current); setMeditationTimer({ running: false, seconds: 0, target: 0 }); }
-  useEffect(() => () => { if (timerRef.current) clearInterval(timerRef.current); }, []);
+ 
+function stopTimer() {
+if (timerRef.current) {
+clearInterval(timerRef.current);
+}
+}
 
   const totalMacros = (dayData.meals || []).reduce((a, meal) => { const m = getMealMacros(meal); return { p: a.p + m.p, g: a.g + m.g, l: a.l + m.l }; }, { p: 0, g: 0, l: 0 });
   const totalSportMin = (dayData.workouts || []).reduce((a, w) => a + (parseInt(w.duration) || 0), 0);
