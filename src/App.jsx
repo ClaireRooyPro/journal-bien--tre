@@ -277,7 +277,7 @@ export default function WellnessJournal() {
     setShowAdd(p => ({ ...p, measurement: false }));
   }
 
-  // function getRecipeMacrosPer100g(recipe) {
+  function getRecipeMacrosPer100g(recipe) {
     const servings = parseFloat(recipe.servings) || 1;
     const totalG = (recipe.ingredients || []).reduce((a, i) => {
       const u = UNITS.find(u => u.value === i.unit);
@@ -926,7 +926,7 @@ export default function WellnessJournal() {
   );
 }
 
-// function FoodSearch({ mealId, activeMealId, setActiveMealId, foodSearch, setFoodSearch, foodResults, foodLoading, pendingItem, setPendingItem, selectFood, updatePendingQuantity, confirmAddFood }) {
+function FoodSearch({ mealId, activeMealId, setActiveMealId, foodSearch, setFoodSearch, foodResults, foodLoading, pendingItem, setPendingItem, selectFood, updatePendingQuantity, confirmAddFood }) {
   const isActive = activeMealId === mealId;
   const showPending = pendingItem && isActive;
 
@@ -996,7 +996,7 @@ export default function WellnessJournal() {
   );
 }
 
-// function Section({ title, color, children }) { return <div style={{ marginBottom: 22 }}><div style={{ fontSize: 13, fontWeight: "bold", color: color || "#8b3a3a", marginBottom: 10, letterSpacing: "0.4px" }}>{title}</div>{children}</div>; }
+function Section({ title, color, children }) { return <div style={{ marginBottom: 22 }}><div style={{ fontSize: 13, fontWeight: "bold", color: color || "#8b3a3a", marginBottom: 10, letterSpacing: "0.4px" }}>{title}</div>{children}</div>; }
 function AddBtn({ onClick, color, children }) { return <button onClick={onClick} style={{ width: "100%", padding: "11px", borderRadius: 13, border: `1.5px dashed ${color}55`, background: `${color}08`, color, cursor: "pointer", fontSize: 13, fontFamily: "inherit" }}>{children}</button>; }
 function ActionBtn({ onClick, color, outline, children }) { return <button onClick={onClick} style={{ padding: "7px 14px", borderRadius: 10, border: `1px solid ${color}`, background: outline ? "transparent" : `${color}15`, color, cursor: "pointer", fontSize: 12, fontFamily: "inherit" }}>{children}</button>; }
 function DeleteBtn({ onClick }) { return <button onClick={onClick} style={{ marginTop: 8, background: "none", border: "1px solid #e07060", borderRadius: 7, color: "#e07060", padding: "3px 11px", cursor: "pointer", fontSize: 11, fontFamily: "inherit" }}>🗑 Supprimer</button>; }
