@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 // Constants
+const PHASES = ["Menstruelle", "Folliculaire", "Ovulatoire", "Lutéale"];
 const SLEEP_QUALITY = ["😴 Très bien", "🙂 Bien", "😐 Moyen", "😞 Mauvais"];
 const HUNGER_LEVELS = Array.from({ length: 10 }, (_, i) => String(i + 1));
 const MOODS = ["😊 Sereine", "😌 Détendue", "😐 Neutre", "😟 Stressée", "😢 Émotionnelle", "😤 Irritable"];
